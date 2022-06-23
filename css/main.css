@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.field .checkbox-label::before {
+  content: "";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.field input[type="checkbox"]:checked + .checkbox-label::before {
+  content: "✖️";
+  background-color: aqua;
+}
+
+.field label {
+  cursor: pointer;
+}
+
+.field .radio-label {
+  position: relative;
+}
+
+.field .radio-label::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 6px;
+  left: 4px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.field .radio-label::before {
+  content: "";
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  vertical-align: middle;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.field input[type="radio"]:checked + .radio-label::after {
+  opacity: 1;
+}
+
+.field .checkbox-label-box {
+  border-bottom: 1px solid transparent;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-right: 10px;
+  transition: 0.3s ease;
+}
+
+.field .checkbox-label-box:hover {
+  border-bottom: 1px dashed black;
+}
+
+.field input[type="checkbox"]:checked + .checkbox-label-box {
+  border-color: black;
+}
+
+.field .radio-label-box {
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid black;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+.field input[type="radio"]:checked + .radio-label-box {
+  background-color: black;
+  color: white;
+}
